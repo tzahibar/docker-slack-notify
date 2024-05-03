@@ -1,8 +1,14 @@
-# Container image that runs your code
-FROM alpine:3.10
+# Use a base image
+FROM some-base-image
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
+# Copy your application files into the container
 COPY entrypoint.sh /entrypoint.sh
+COPY other-files /app
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
+# Set the correct permissions for the entrypoint script
+RUN chmod +x /entrypoint.sh
+
+# Define the entry point for your container
 ENTRYPOINT ["/entrypoint.sh"]
+
+# Other instructions like exposing ports, setting environment variables, etc.
