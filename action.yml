@@ -1,5 +1,5 @@
 # action.yml
-name: 'slack'
+name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
   who-to-greet:  # id of input
@@ -11,6 +11,6 @@ outputs:
     description: 'The time we greeted you'
 runs:
   using: 'docker'
-  image: 'docker-slack-notify/slack-action-image:latest'
+  image: 'Dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
